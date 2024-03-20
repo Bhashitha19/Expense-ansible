@@ -36,8 +36,8 @@
         chdir: /app
     - name: Load Schema
       ansible.builtin.shell: mysql -h mysql-w.decops76s.online -uroot -p${MySQL_ROOT_PASSWORD} < /app/schema/backend.sql
-    - name: Start backend service
-      ansible builtin.systemd:
+    - name: start backend service
+      ansible.builtin.systemd:
         name: backend
         state: restarted
         enabled: yes
