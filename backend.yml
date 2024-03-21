@@ -38,7 +38,7 @@
       ansible.builtin.dnf:
         name: mysql
         state: present
-    - name: Load Schema
+    - name: load schema
       ansible.builtin.shell: mysql -h mysql-w.decops76s.online -uroot -p{{MySQL_ROOT_PASSWORD}} < /app/schema/backend.sql
     - name: Start Backend Service
       ansible.builtin.systemd:
